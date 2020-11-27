@@ -1,0 +1,33 @@
+import random
+
+fil1 = 0
+fil2 = 0
+fil3 = 0
+fil4 = 0
+
+question_pose = ''
+question = [{'Question': 'Sur quel continent se situe la France ?', 'repTrue': 'Europe', 'rep2': 'Afrique', 'rep3': 'Océanie', 'rep4': 'Asie'},
+            {'Question': "Comment s'appelait le général de Gaulle", 'repTrue': 'Charles', 'rep2': 'Francois', 'rep3': 'Emmanuel', 'rep4': 'Paul'}]
+
+question_pose = question[random.randint(0, len(question)) - 1]
+la_question = question_pose['Question']
+rep1 = random.choice(['repTrue', 'rep2', 'rep3', 'rep4'])
+rep2 = random.choice(['repTrue', 'rep2', 'rep3', 'rep4'])
+while rep2 == rep1:
+    rep2 = random.choice(['repTrue', 'rep2', 'rep3', 'rep4'])
+rep3 = random.choice(['repTrue', 'rep2', 'rep3', 'rep4'])
+while rep3 == rep1 or rep3 == rep2:
+    rep3 = random.choice(['repTrue', 'rep2', 'rep3', 'rep4'])
+rep4 = random.choice(['repTrue', 'rep2', 'rep3', 'rep4'])
+while rep4 == rep1 or rep4 == rep2 or rep4 == rep3:
+    rep4 = random.choice(['repTrue', 'rep2', 'rep3', 'rep4'])
+
+print(la_question)
+print(question_pose[rep1])
+print(question_pose[rep2])
+print(question_pose[rep3])
+print(question_pose[rep4])
+
+
+# On ecrit le num du fil pour le faire sauter
+
